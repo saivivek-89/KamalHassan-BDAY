@@ -3,97 +3,150 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-<title>Parnika's First Birthday ✨ | 8th May 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Parnika's 1st Birthday ✨ | 10th May 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #fef3f7; font-family: 'Quicksand', sans-serif; overflow-x: hidden; }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-  /* Splash Screen */
+  body {
+    background: linear-gradient(145deg, #fef3f7 0%, #ffe6f0 100%);
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* SPLASH SCREEN */
   .splash-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, #ffe6f0 0%, #fbc4d4 100%);
+    background: radial-gradient(circle at 30% 20%, #ffe6f0 0%, #fbc4d4 100%);
     z-index: 10000;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: opacity 1s ease;
+    transition: opacity 0.6s ease;
     text-align: center;
+    cursor: pointer;
   }
-  .magic-circle { position: relative; width: 280px; height: 280px; display: flex; align-items: center; justify-content: center; }
-  .sparkle-star { position: absolute; font-size: 45px; animation: twinkle 1.5s infinite alternate; }
-  .star1 { top: 20px; left: 20px; }
-  .star2 { bottom: 30px; right: 30px; font-size: 55px; animation-delay: 0.5s; }
-  .star3 { top: 80px; right: 10px; animation-delay: 0.3s; }
-  .star4 { bottom: 70px; left: 15px; animation-delay: 0.7s; }
-  .center-crown { font-size: 100px; animation: bounceCrown 1s infinite alternate; }
-  @keyframes twinkle {
-    0% { opacity: 0.3; transform: scale(0.8); }
-    100% { opacity: 1; transform: scale(1.2); text-shadow: 0 0 20px #ffd966; }
+  .magic-circle {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  @keyframes bounceCrown { 0% { transform: translateY(0px); } 100% { transform: translateY(-15px); } }
-  .splash-message { font-family: 'Dancing Script', cursive; font-size: 2.2rem; color: #b82b5e; margin-top: 20px; }
-  .splash-sub { font-size: 1rem; color: #c2185b; margin-top: 10px; }
-  .open-invite {
-    margin-top: 35px;
-    background: linear-gradient(135deg, #f78ca2, #f06292);
-    border: none;
-    padding: 14px 42px;
-    font-family: 'Quicksand', sans-serif;
+  .sparkle-star {
+    position: absolute;
+    font-size: 38px;
+    animation: twinkleFast 0.7s infinite alternate;
+  }
+  .star1 { top: 10px; left: 15px; }
+  .star2 { bottom: 20px; right: 20px; font-size: 48px; animation-delay: 0.2s; }
+  .star3 { top: 65px; right: 0px; animation-delay: 0.4s; }
+  .star4 { bottom: 55px; left: 5px; animation-delay: 0.1s; }
+  .center-crown { font-size: 85px; animation: bounceFast 0.5s infinite alternate; }
+  
+  @keyframes twinkleFast {
+    0% { opacity: 0.4; transform: scale(0.7); text-shadow: 0 0 0px gold; }
+    100% { opacity: 1; transform: scale(1.2); text-shadow: 0 0 18px #ffb347; }
+  }
+  @keyframes bounceFast {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-10px); }
+  }
+  .splash-message {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #b82b5e;
+    margin-top: 20px;
     font-weight: 700;
-    font-size: 1.1rem;
+  }
+  .splash-sub {
+    font-size: 0.95rem;
+    color: #c2185b;
+    margin-top: 6px;
+    letter-spacing: 1px;
+  }
+  .open-invite {
+    margin-top: 28px;
+    background: linear-gradient(135deg, #ff9aae, #f06292);
+    border: none;
+    padding: 12px 34px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 2px;
     color: white;
-    border-radius: 60px;
+    border-radius: 50px;
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 0 8px 25px rgba(240,98,146,0.5);
-    opacity: 0;
-    transform: scale(0.9);
-    pointer-events: none;
+    box-shadow: 0 8px 20px rgba(240,98,146,0.5);
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+    animation: pulseBtn 1.2s infinite ease;
   }
-  .open-invite.reveal { opacity: 1; transform: scale(1); pointer-events: auto; }
-  
-  /* Main Content */
-  .main-birthday { opacity: 0; visibility: hidden; transition: opacity 0.9s ease; }
-  .main-birthday.visible { opacity: 1; visibility: visible; }
-  
-  /* Hero Section */
+  @keyframes pulseBtn {
+    0% { transform: scale(1); box-shadow: 0 8px 20px rgba(240,98,146,0.5); }
+    50% { transform: scale(1.05); box-shadow: 0 12px 30px rgba(236,64,122,0.7); }
+    100% { transform: scale(1); box-shadow: 0 8px 20px rgba(240,98,146,0.5); }
+  }
+  .open-invite:hover {
+    transform: scale(1.06);
+    background: linear-gradient(135deg, #ff7b94, #ec407a);
+  }
+
+  /* MAIN CONTENT */
+  .main-birthday {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.7s ease;
+  }
+  .main-birthday.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* HERO SECTION WITH TEDDY BEAR RAIN */
   .hero-section {
     min-height: 100vh;
-    background: linear-gradient(135deg, #ffeef4, #ffe0e8);
+    background: linear-gradient(145deg, #ffeef4, #ffe2ec);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 80px 24px;
+    padding: 70px 20px;
     position: relative;
     overflow: hidden;
   }
   .hero-card {
-    background: rgba(255, 245, 250, 0.92);
+    background: rgba(255, 248, 250, 0.94);
     backdrop-filter: blur(12px);
-    border-radius: 70px 40px 70px 40px;
+    border-radius: 90px 50px 90px 50px;
     padding: 45px 30px;
     max-width: 800px;
     width: 100%;
-    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    box-shadow: 0 30px 45px rgba(0,0,0,0.12);
     border: 2px solid #ffb7c5;
-    z-index: 2;
+    z-index: 3;
   }
   .baby-name {
     font-family: 'Dancing Script', cursive;
-    font-size: clamp(3rem, 10vw, 5rem);
+    font-size: clamp(3rem, 10vw, 5.2rem);
     font-weight: 700;
     color: #d81b60;
-    text-shadow: 3px 3px 12px #ffb6c1;
+    text-shadow: 4px 4px 16px #ffb6c1;
   }
   .birthday-badge {
-    background: #ffd0dc;
+    background: linear-gradient(120deg, #ffd0dc, #ffe0e8);
     display: inline-block;
     padding: 8px 28px;
     border-radius: 60px;
@@ -101,15 +154,16 @@
     color: #a11242;
     margin: 15px 0;
     font-size: 1.3rem;
+    border: 1px solid #ff99bb;
   }
   .date-gold {
     font-size: 1.8rem;
     font-weight: 700;
-    background: linear-gradient(120deg, #f5576c, #f093fb);
+    background: linear-gradient(135deg, #f5576c, #ffa270);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    margin: 10px 0;
+    margin: 12px 0;
   }
   .countdown-wrap {
     display: flex;
@@ -119,94 +173,316 @@
     flex-wrap: wrap;
   }
   .count-box {
-    background: #fff0f5;
-    padding: 12px 18px;
+    background: #fff5f8;
+    padding: 12px 16px;
     border-radius: 50px;
     min-width: 75px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    border: 1px solid #ff99bb;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+    border: 1px solid #ffb7c5;
   }
-  .count-num { font-size: 2rem; font-weight: 800; color: #e91e63; }
-  .count-label { font-size: 0.7rem; color: #ad1457; }
+  .count-num {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #e91e63;
+  }
+  .count-label {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    color: #ad1457;
+  }
   .music-btn {
     background: #f48fb1;
     border: none;
     padding: 10px 28px;
-    border-radius: 40px;
+    border-radius: 60px;
     color: white;
     font-weight: bold;
-    margin-top: 15px;
+    margin-top: 18px;
     cursor: pointer;
-    font-size: 1rem;
+    transition: 0.2s;
+    font-size: 0.9rem;
   }
-  
-  /* Gallery */
-  .gallery-section { padding: 70px 20px; background: #fff9fb; }
-  .section-head { text-align: center; font-family: 'Dancing Script', cursive; font-size: 2.2rem; color: #d81b60; margin-bottom: 30px; }
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 16px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .photo-item {
+  .music-btn:hover { background: #ec407a; }
+
+  /* TEDDY BEAR RAIN ANIMATION */
+  .teddy-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
     overflow: hidden;
-    border-radius: 24px;
-    background: white;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    aspect-ratio: 1 / 1;
-    opacity: 0;
-    transform: translateY(40px);
-    cursor: pointer;
   }
-  .photo-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-  .photo-item:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 18px 30px rgba(236,64,122,0.25); }
-  .photo-item:hover img { transform: scale(1.08); }
-  .photo-item.animate-in { opacity: 1; transform: translateY(0); }
+  .teddy-drop {
+    position: absolute;
+    font-size: 28px;
+    animation: teddyFall linear infinite;
+    opacity: 0.8;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+  }
+  @keyframes teddyFall {
+    0% {
+      transform: translateY(-30px) rotate(0deg);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0.15;
+    }
+  }
+
+  /* SCROLLING GALLERY - NO REPEAT IMAGES IN ANY SCROLL */
+  .gallery-section {
+    padding: 70px 0 50px 0;
+    background: #fffafc;
+    overflow: hidden;
+    width: 100%;
+  }
+  .section-head {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.4rem;
+    color: #d81b60;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 8px #ffccd9;
+    padding: 0 20px;
+  }
   
-  /* Video Section */
-  .video-memory { background: linear-gradient(145deg, #fce4ec, #fbeaf0); padding: 50px 24px; text-align: center; }
-  .vid-wrapper { max-width: 800px; margin: 0 auto; border-radius: 40px; overflow: hidden; box-shadow: 0 20px 30px rgba(0,0,0,0.15); border: 3px solid white; }
-  video { width: 100%; display: block; }
+  .scrolling-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #fff5f8;
+    padding: 25px 0;
+  }
   
-  /* Event Section - SINGLE CELEBRATION */
-  .event-single { background: #fff5f8; padding: 70px 24px; text-align: center; }
+  .scrolling-track {
+    display: flex;
+    gap: 22px;
+    width: max-content;
+    animation: scrollLeft 30s linear infinite;
+  }
+  
+  .scrolling-wrapper:hover .scrolling-track {
+    animation-play-state: paused;
+  }
+  
+  @keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  .scrolling-wrapper-reverse {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #fffafc;
+    padding: 20px 0 35px 0;
+  }
+  
+  .scrolling-track-reverse {
+    display: flex;
+    gap: 22px;
+    width: max-content;
+    animation: scrollRight 35s linear infinite;
+  }
+  
+  @keyframes scrollRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+  
+  .scrolling-wrapper-reverse:hover .scrolling-track-reverse {
+    animation-play-state: paused;
+  }
+  
+  /* Photo Frames with animated toys */
+  .scrolling-photo {
+    width: 210px;
+    height: 210px;
+    flex-shrink: 0;
+    border-radius: 35px;
+    background: #fff0f5;
+    padding: 8px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.12);
+    transition: all 0.3s ease;
+    border: 3px solid #ffb5c0;
+    outline: 4px solid #ffe0b5;
+    outline-offset: 2px;
+    position: relative;
+    animation: floatFrame 3s infinite ease-in-out;
+  }
+  
+  .scrolling-photo:nth-child(odd) { animation-delay: 0s; }
+  .scrolling-photo:nth-child(even) { animation-delay: 1.5s; }
+  
+  @keyframes floatFrame {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .scrolling-photo:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 20px 35px rgba(236,64,122,0.25);
+    border-color: #f06292;
+    outline-color: #ffcc80;
+  }
+  
+  .scrolling-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 28px;
+    transition: 0.3s;
+    display: block;
+  }
+  
+  /* Animated toys inside frames */
+  .scrolling-photo .toy-left {
+    position: absolute;
+    bottom: -15px;
+    left: -12px;
+    font-size: 28px;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+    animation: toyWiggle 1.2s infinite ease;
+    pointer-events: none;
+    z-index: 5;
+  }
+  
+  .scrolling-photo .toy-right {
+    position: absolute;
+    top: -15px;
+    right: -12px;
+    font-size: 28px;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+    animation: toySpin 1.5s infinite ease;
+    pointer-events: none;
+    z-index: 5;
+  }
+  
+  .scrolling-photo .toy-corner {
+    position: absolute;
+    bottom: -12px;
+    right: -10px;
+    font-size: 24px;
+    animation: toyBounce 0.8s infinite alternate;
+    pointer-events: none;
+  }
+  
+  @keyframes toyWiggle {
+    0%, 100% { transform: rotate(0deg) translateY(0); }
+    25% { transform: rotate(15deg) translateY(-3px); }
+    75% { transform: rotate(-10deg) translateY(2px); }
+  }
+  
+  @keyframes toySpin {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(20deg) scale(1.1); }
+    100% { transform: rotate(0deg) scale(1); }
+  }
+  
+  @keyframes toyBounce {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-8px); }
+  }
+  
+  /* VIDEO SECTION */
+  .video-memory {
+    background: linear-gradient(145deg, #fce4ec, #fbeaf0);
+    padding: 60px 24px;
+    text-align: center;
+  }
+  .vid-wrapper {
+    max-width: 850px;
+    margin: 0 auto;
+    border-radius: 48px;
+    overflow: hidden;
+    box-shadow: 0 25px 40px rgba(0,0,0,0.18);
+    border: 4px solid white;
+    background: #000;
+  }
+  video {
+    width: 100%;
+    display: block;
+    border-radius: 44px;
+  }
+  
+  /* EVENT SINGLE */
+  .event-single {
+    background: #fff5f8;
+    padding: 70px 24px;
+    text-align: center;
+  }
   .celebration-card {
-    max-width: 650px;
+    max-width: 680px;
     margin: 0 auto;
     background: white;
-    border-radius: 60px;
+    border-radius: 65px;
     padding: 35px 28px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-    border-left: 12px solid #f06292;
-    border-right: 12px solid #f8bbd0;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.08);
+    border-left: 14px solid #f06292;
+    border-right: 14px solid #f8bbd0;
   }
-  .celebration-card h3 { font-size: 2rem; color: #c2185b; font-family: 'Dancing Script', cursive; }
-  .event-time { font-size: 1.3rem; margin: 15px 0; color: #ad1457; font-weight: 600; }
-  .venue-details { margin-top: 20px; background: #fff0f5; padding: 20px; border-radius: 50px; }
-  .venue-details p { margin: 8px 0; }
-  
-  /* Family Section */
-  .family-invite { background: #ffe6f0; padding: 60px 24px; text-align: center; }
-  .family-wrapper { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 25px; }
-  .family-card { 
-    background: white; 
-    border-radius: 50px; 
-    padding: 15px 32px; 
-    min-width: 160px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  .celebration-card h3 {
+    font-size: 2rem;
+    color: #c2185b;
+    font-family: 'Dancing Script', cursive;
   }
-  .family-card strong { color: #d81b60; font-size: 1.1rem; }
-  .contact-info { margin: 30px auto 20px; }
-  .contact-info p { font-size: 1.1rem; }
-  .contact-info strong { color: #d81b60; font-size: 1.2rem; }
+  .event-time {
+    font-size: 1.3rem;
+    margin: 15px 0;
+    color: #ad1457;
+    font-weight: 600;
+  }
+  .venue-details {
+    margin-top: 25px;
+    background: #fff0f5;
+    padding: 22px;
+    border-radius: 50px;
+  }
   
-  .whatsapp-share { margin: 30px auto 20px; text-align: center; }
+  /* FAMILY */
+  .family-invite {
+    background: #ffe6f0;
+    padding: 60px 24px;
+    text-align: center;
+  }
+  .family-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+  }
+  .family-card {
+    background: white;
+    border-radius: 55px;
+    padding: 15px 32px;
+    min-width: 170px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+    border: 1px solid #ffb7c5;
+  }
+  .family-card strong {
+    color: #d81b60;
+    font-size: 1.1rem;
+  }
+  .contact-info {
+    margin: 35px auto 20px;
+    background: #fff0f5;
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 60px;
+  }
+  .whatsapp-share {
+    margin: 35px auto 25px;
+    text-align: center;
+  }
   .whatsapp-btn {
     background: #25D366;
-    padding: 14px 36px;
+    padding: 14px 38px;
     border-radius: 50px;
     display: inline-flex;
     gap: 12px;
@@ -215,31 +491,41 @@
     border: none;
     cursor: pointer;
     font-size: 1rem;
-    transition: 0.2s;
   }
-  .whatsapp-btn:hover { transform: scale(1.05); background: #20b859; }
-  
-  footer { background: #fbc4d4; padding: 35px; text-align: center; color: #7f2b4b; }
-  .reveal { opacity: 0; transform: translateY(35px); transition: all 0.7s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  
-  /* Floating Elements */
+  footer {
+    background: #fbc4d4;
+    padding: 35px;
+    text-align: center;
+    color: #7f2b4b;
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
   .floating-heart {
     position: absolute;
     pointer-events: none;
-    font-size: 20px;
+    font-size: 22px;
     animation: floatUp 6s linear infinite;
-    z-index: 1;
+    z-index: 2;
   }
   @keyframes floatUp {
-    0% { transform: translateY(100vh) rotate(0deg); opacity: 0.7; }
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0.6; }
     100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
   }
   
   @media (max-width: 650px) {
-    .gallery-grid { gap: 12px; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
-    .celebration-card { padding: 25px 18px; }
-    .family-card { padding: 10px 20px; min-width: 130px; }
+    .scrolling-photo { width: 150px; height: 150px; }
+    .scrolling-track { gap: 15px; }
+    .scrolling-track-reverse { gap: 15px; }
+    .family-card { padding: 10px 20px; min-width: 140px; }
+    .toy-left, .toy-right, .toy-corner { font-size: 18px !important; }
+    .teddy-drop { font-size: 22px; }
   }
 </style>
 </head>
@@ -255,25 +541,25 @@
     <div class="center-crown">👑🎀</div>
   </div>
   <div class="splash-message">🎀 Parnika's First Birthday 🎀</div>
-  <div class="splash-sub">A year of giggles, love & magic</div>
+  <div class="splash-sub">Our little star turns ONE!</div>
   <button id="revealInviteBtn" class="open-invite">🌸 OPEN THE CELEBRATION 🌸</button>
 </div>
 
 <!-- MAIN CONTENT -->
 <div id="mainContent" class="main-birthday">
-  
-  <!-- Background Music -->
+  <!-- Background Music - YOUR ORIGINAL SONG -->
   <audio id="bgMusic" loop preload="auto">
     <source src="https://github.com/saivivek-89/KamalHassan-BDAY/raw/refs/heads/main/Chiru%20chiru%20chinnari%20song%20%20MIHIRA%20SHREYANVI%20%20Birthday%20Promo..%20-%20Mihira%20Shreyanvi.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- HERO SECTION -->
+  <!-- HERO SECTION WITH TEDDY BEAR RAIN -->
   <section class="hero-section" id="heroSection">
+    <div class="teddy-rain" id="teddyRain"></div>
     <div class="hero-card">
       <h1 class="baby-name">Parnika 💕</h1>
       <div class="birthday-badge">✨ Turning ONE Year Old! ✨</div>
-      <p style="font-size:1.2rem; margin-top:5px;">Daughter of <strong>Bharath & Rekha</strong></p>
-      <div class="date-gold">🎂 8th MAY 2026 🎂</div>
+      <p style="font-size:1.2rem; margin-top:5px;">Beloved daughter of <strong>Bharath & Rekha</strong></p>
+      <div class="date-gold">🎂 10th MAY 2026 🎂</div>
       <div class="countdown-wrap" id="countdownArea">
         <div class="count-box"><span class="count-num" id="days">00</span><div class="count-label">Days</div></div>
         <div class="count-box"><span class="count-num" id="hours">00</span><div class="count-label">Hours</div></div>
@@ -284,24 +570,25 @@
     </div>
   </section>
 
-  <!-- GALLERY SECTION - 14+ IMAGES -->
+  <!-- SCROLLING GALLERY - TWO ROWS, NO REPEAT IMAGES -->
   <div class="gallery-section">
     <h2 class="section-head">📸 Parnika's Precious Moments 📸</h2>
-    <div class="gallery-grid" id="photoGrid"></div>
+    <div class="scrolling-wrapper">
+      <div class="scrolling-track" id="scrollingTrack1"></div>
+    </div>
+    <div class="scrolling-wrapper-reverse">
+      <div class="scrolling-track-reverse" id="scrollingTrack2"></div>
+    </div>
   </div>
 
-  <!-- VIDEO MEMORY SECTION -->
+  <!-- VIDEO MEMORY -->
   <div class="video-memory">
     <h2 class="section-head">🎬 Our Little Star's Journey 🎬</h2>
     <div class="vid-wrapper">
-      <!-- 🔽🔽🔽 PUT YOUR VIDEO URL HERE 🔽🔽🔽 -->
-      <video controls autoplay loop muted playsinline poster="https://images.pexels.com/photos/6437791/pexels-photo-6437791.jpeg?auto=compress&cs=tinysrgb&w=600">
-        <source src="your-video-url-here.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+      <video controls autoplay loop muted playsinline poster="https://images.pexels.com/photos/6437791/pexels-photo-6437791.jpeg?auto=compress&cs=tinysrgb&w=400">
+        <source src="https://saivivek-89.github.io/KamalHassan-BDAY/WhatsApp%20Video%202026-05-04%20at%209.21.04%20PM.mp4" type="video/mp4">
       </video>
-      <!-- 🔼🔼🔼 REPLACE "your-video-url-here.mp4" WITH YOUR ACTUAL VIDEO LINK 🔼🔼🔼 -->
     </div>
-    <p style="margin-top: 15px; color: #ad1457;">💕 Watch Parnika's first year journey 💕</p>
   </div>
 
   <!-- SINGLE BIRTHDAY CELEBRATION -->
@@ -309,47 +596,40 @@
     <h2 class="section-head">🎈 The Big Day Celebration 🎈</h2>
     <div class="celebration-card">
       <h3>🎂 First Birthday Party 🎂</h3>
-      <div class="event-time">🗓️ 8th May 2026 (Friday) | 4:00 PM onwards</div>
+      <div class="event-time">🗓️ 10th May 2026 (Sunday) | 4:00 PM onwards</div>
       <div class="venue-details">
         <p>📍 <strong>Venue:</strong> SRI SURYA CONVENTION A/C KALYANAMANDAPAM</p>
         <p>Mavayyagari Thota, Tangellamudi, Eluru, Andhra Pradesh</p>
         <iframe width="100%" height="200" style="border-radius:20px; margin-top:15px; border:none;" frameborder="0" src="https://www.google.com/maps?q=16.711,81.103&output=embed" allowfullscreen></iframe>
         <a href="https://www.google.com/maps/dir/?api=1&destination=16.711,81.103" target="_blank" style="color:#e91e63; display:inline-block; margin-top:12px;">🗺️ Get Directions →</a>
       </div>
-      <p style="margin-top: 20px; font-style: italic;">💖 Join us for cake, joy, and memories as Parnika turns ONE! 💖</p>
     </div>
   </div>
 
-  <!-- INVITED BY SECTION -->
+  <!-- INVITED BY: Father's Brother -->
   <div class="family-invite">
     <h2 class="section-head">✨ Invited with love by ✨</h2>
     <div class="family-wrapper">
       <div class="family-card"><strong>👨‍👩‍👧 Parents</strong><br>Bharath & Rekha</div>
-      <div class="family-card"><strong>👦 Brothers</strong><br>Vicky & Praveen</div>
+      <div class="family-card"><strong>👨‍👦 Babai's</strong><br>(Praveen / Vikram)</div>
     </div>
-    
     <div class="contact-info">
       <p>📞 For RSVP & Blessings:</p>
-      <p><strong>9490514055</strong> &nbsp;|&nbsp; <strong>9490514054</strong></p>
+      <p><strong>+91 88855 51903</strong> &nbsp;|&nbsp; <strong>9490514054</strong></p>
     </div>
-    
     <div class="whatsapp-share">
       <button id="whatsappShareBtn" class="whatsapp-btn">💬 Share Invitation on WhatsApp</button>
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
-    <p>🌟 “A baby girl is a little miracle that fills every day with wonder.” 🌟</p>
-    <p>❤️ Come celebrate Parnika's First Trip Around the Sun! ❤️</p>
-    <p style="margin-top: 10px; font-size: 0.8rem;">8th May 2026 | 4:00 PM | Eluru</p>
+    <p>🌟 “A baby girl makes every day a celebration.” 🌟</p>
+    <p>❤️ Join us to make Parnika's first birthday unforgettable! ❤️</p>
   </footer>
 </div>
 
 <script>
-// ============================================
-// 📸 STEP 1: PUT YOUR IMAGE URLs HERE (replace these)
-// ============================================
+// ========== IMAGES ARRAY (ALL 12 UNIQUE IMAGES - NO REPEATS) ==========
 const YOUR_IMAGES = [
     "https://saivivek-89.github.io/KamalHassan-BDAY/IMG-20260218-WA0057.jpg.jpeg",
     "https://saivivek-89.github.io/KamalHassan-BDAY/IMG_20260216_121149.jpg.jpeg",
@@ -365,53 +645,115 @@ const YOUR_IMAGES = [
     "https://saivivek-89.github.io/KamalHassan-BDAY/IMG_20260504_211311.jpg"
 ];
 
-// ============================================
-// 🎬 STEP 2: PUT YOUR VIDEO URL HERE
-// ============================================
-// Replace 'your-video-url-here.mp4' with your actual video link
-// Examples:
-// - Local file: "parnika-birthday.mp4"
-// - GitHub Pages: "https://YOUR_USERNAME.github.io/REPO/video.mp4"
-// - Google Drive: use gdrive embed or direct link
+// Different toy sets for each frame (moving toys)
+const toySets = [
+    { left: "🧸", right: "🎈", corner: "🚂" },
+    { left: "🐻", right: "🎠", corner: "🐘" },
+    { left: "🐼", right: "🦄", corner: "🎪" },
+    { left: "🐨", right: "🎡", corner: "🐧" },
+    { left: "🦁", right: "🎠", corner: "🐰" },
+    { left: "🐸", right: "🎈", corner: "🐥" },
+    { left: "🐶", right: "🚂", corner: "🐱" },
+    { left: "🦊", right: "🎪", corner: "🐝" },
+    { left: "🐒", right: "🎡", corner: "🐌" },
+    { left: "🐮", right: "🎠", corner: "🦋" },
+    { left: "🐷", right: "🎈", corner: "🐞" },
+    { left: "🐰", right: "🚂", corner: "🐙" }
+];
 
-const YOUR_VIDEO_URL = "your-video-url-here.mp4";  // 🔽 CHANGE THIS 🔽
+// ========== ROW 1: LEFT TO RIGHT SCROLL (ALL 12 IMAGES, NO REPEAT) ==========
+const track1 = document.getElementById("scrollingTrack1");
 
-// Apply video URL
-const videoSource = document.querySelector('video source');
-if (videoSource && YOUR_VIDEO_URL !== "your-video-url-here.mp4") {
-    videoSource.src = YOUR_VIDEO_URL;
-    document.querySelector('video').load();
-}
-
-// ============================================
-// RENDER GALLERY
-// ============================================
-const photoGrid = document.getElementById("photoGrid");
-YOUR_IMAGES.forEach((url, idx) => {
+// Add images to first row (each image appears ONCE)
+YOUR_IMAGES.forEach((imgUrl, idx) => {
     const div = document.createElement("div");
-    div.className = "photo-item";
-    div.innerHTML = `<img src="${url}" alt="Parnika moment ${idx+1}" loading="lazy">`;
-    photoGrid.appendChild(div);
+    div.className = "scrolling-photo";
+    const toy = toySets[idx % toySets.length];
+    div.innerHTML = `
+        <img src="${imgUrl}" alt="Parnika ${idx+1}" loading="lazy">
+        <div class="toy-left">${toy.left}</div>
+        <div class="toy-right">${toy.right}</div>
+        <div class="toy-corner">${toy.corner}</div>
+    `;
+    track1.appendChild(div);
 });
 
-// Scroll animation for gallery
-function animateItems() {
-    document.querySelectorAll('.photo-item').forEach(item => {
-        const rect = item.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 80) item.classList.add('animate-in');
-    });
-}
-window.addEventListener('scroll', animateItems);
-window.addEventListener('load', animateItems);
+// Duplicate for seamless infinite scroll (but same set, no extra unique images)
+const firstRowImages = [...track1.children];
+firstRowImages.forEach(child => {
+    const clone = child.cloneNode(true);
+    track1.appendChild(clone);
+});
 
-// ============================================
-// COUNTDOWN TIMER
-// ============================================
+// ========== ROW 2: RIGHT TO LEFT SCROLL (SAME 12 IMAGES BUT DIFFERENT ORDER - NO REPEAT WITHIN ROW) ==========
+const track2 = document.getElementById("scrollingTrack2");
+// Shuffle the images for second row variety
+const shuffledImages = [...YOUR_IMAGES];
+for (let i = shuffledImages.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledImages[i], shuffledImages[j]] = [shuffledImages[j], shuffledImages[i]];
+}
+
+shuffledImages.forEach((imgUrl, idx) => {
+    const div = document.createElement("div");
+    div.className = "scrolling-photo";
+    const toy = toySets[(idx + 5) % toySets.length];
+    div.innerHTML = `
+        <img src="${imgUrl}" alt="Parnika ${idx+1}" loading="lazy">
+        <div class="toy-left">${toy.left}</div>
+        <div class="toy-right">${toy.right}</div>
+        <div class="toy-corner">${toy.corner}</div>
+    `;
+    track2.appendChild(div);
+});
+
+// Duplicate for seamless infinite scroll
+const secondRowImages = [...track2.children];
+secondRowImages.forEach(child => {
+    const clone = child.cloneNode(true);
+    track2.appendChild(clone);
+});
+
+// ========== TEDDY BEAR RAIN FUNCTION ==========
+function startTeddyRain() {
+    const rainContainer = document.getElementById("teddyRain");
+    if (!rainContainer) return;
+    
+    const teddyEmojis = ["🧸", "🐻", "🎀", "🌸", "🐼", "🐨", "🧸", "🐻‍❄️"];
+    
+    function createTeddyDrop() {
+        const teddy = document.createElement("div");
+        teddy.classList.add("teddy-drop");
+        const randomTeddy = teddyEmojis[Math.floor(Math.random() * teddyEmojis.length)];
+        teddy.textContent = randomTeddy;
+        teddy.style.left = Math.random() * 100 + "%";
+        teddy.style.fontSize = 20 + Math.random() * 25 + "px";
+        teddy.style.animationDuration = 4 + Math.random() * 5 + "s";
+        teddy.style.animationDelay = Math.random() * 3 + "s";
+        rainContainer.appendChild(teddy);
+        
+        setTimeout(() => {
+            teddy.remove();
+        }, 9000);
+    }
+    
+    // Create initial rain drops
+    for (let i = 0; i < 35; i++) {
+        setTimeout(() => createTeddyDrop(), i * 200);
+    }
+    
+    // Continue creating rain
+    setInterval(() => {
+        createTeddyDrop();
+    }, 600);
+}
+
+// ========== COUNTDOWN (10th May 2026, 4 PM) ==========
 function updateCountdown() {
-    const birthday = new Date(2026, 4, 8, 16, 0, 0).getTime();
-    const diff = birthday - Date.now();
+    const target = new Date(2026, 4, 10, 16, 0, 0).getTime();
+    const diff = target - Date.now();
     if (diff < 0) {
-        document.getElementById("countdownArea").innerHTML = '<div class="count-box" style="background:#ffb7c5;"><span style="font-size:1.2rem;">🎉 Happy Birthday Parnika! 🎉</span></div>';
+        document.getElementById("countdownArea").innerHTML = '<div class="count-box" style="background:#ffb7c5;"><span style="font-size:1.2rem;">🎉 Today is the Day! 🎉</span></div>';
         return;
     }
     document.getElementById("days").innerText = Math.floor(diff / 86400000).toString().padStart(2,'0');
@@ -422,9 +764,7 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// ============================================
-// SPLASH SCREEN & MUSIC
-// ============================================
+// ========== SPLASH + MUSIC (YOUR ORIGINAL SONG) ==========
 const splashDiv = document.getElementById("splashScreen");
 const revealBtn = document.getElementById("revealInviteBtn");
 const mainDiv = document.getElementById("mainContent");
@@ -432,101 +772,79 @@ const bgMusic = document.getElementById("bgMusic");
 let musicPlaying = false;
 const musicToggle = document.getElementById("musicToggleBtn");
 
-setTimeout(() => {
-    if (!revealBtn.classList.contains("reveal")) revealBtn.classList.add("reveal");
-}, 2000);
-
 function revealInvitation() {
     mainDiv.classList.add("visible");
     splashDiv.style.opacity = "0";
-    setTimeout(() => { splashDiv.style.display = "none"; }, 900);
+    setTimeout(() => { splashDiv.style.display = "none"; }, 700);
     
-    bgMusic.play().catch(() => {});
-    musicToggle.innerHTML = "🔊 Playing";
+    // Start teddy bear rain after page opens
+    startTeddyRain();
+    
+    bgMusic.play().catch(e => console.log("audio autoplay blocked - click music button"));
+    musicToggle.innerText = "🔊 Playing";
     musicPlaying = true;
     
     setTimeout(() => {
         document.querySelectorAll('.reveal').forEach(el => {
             if (el.getBoundingClientRect().top < window.innerHeight - 50) el.classList.add("visible");
         });
-        animateItems();
         startFloatingHearts();
-    }, 200);
+    }, 150);
 }
+
 revealBtn.addEventListener("click", revealInvitation);
+splashDiv.addEventListener("click", (e) => {
+    if (e.target === splashDiv || e.target.classList?.contains('splash-message') || e.target.classList?.contains('splash-sub')) {
+        revealInvitation();
+    }
+});
 
 musicToggle.addEventListener("click", () => {
-    if (musicPlaying) { 
-        bgMusic.pause(); 
-        musicToggle.innerHTML = "🎵 Play Melody 🎵"; 
-    } else { 
-        bgMusic.play().catch(e=>console.log); 
-        musicToggle.innerHTML = "🔊 Playing"; 
+    if (musicPlaying) {
+        bgMusic.pause();
+        musicToggle.innerText = "🎵 Play Melody 🎵";
+    } else {
+        bgMusic.play().catch(e=>console.log);
+        musicToggle.innerText = "🔊 Playing";
     }
     musicPlaying = !musicPlaying;
 });
 
-// Floating hearts animation
+// Floating hearts
 function startFloatingHearts() {
     const hero = document.getElementById("heroSection");
     if (!hero) return;
     setInterval(() => {
         const heart = document.createElement('div');
         heart.classList.add('floating-heart');
-        heart.innerHTML = ['💖','🎀','🌸','🎈','✨','⭐'][Math.floor(Math.random()*6)];
+        heart.innerHTML = ['💖','🎀','🌸','🎈','✨','⭐','🧸','🦄'][Math.floor(Math.random()*8)];
         heart.style.left = Math.random() * 100 + '%';
-        heart.style.fontSize = 18 + Math.random() * 25 + 'px';
+        heart.style.fontSize = 18 + Math.random() * 26 + 'px';
         heart.style.animationDuration = 4 + Math.random() * 5 + 's';
         hero.appendChild(heart);
         setTimeout(() => heart.remove(), 7000);
     }, 800);
 }
 
-// ============================================
-// WHATSAPP SHARE
-// ============================================
-const whatsBtn = document.getElementById("whatsappShareBtn");
-whatsBtn.addEventListener("click", () => {
-    const message = `🎀✨ *You're Invited!* ✨🎀
-
-🎂 *Parnika's First Birthday* 🎂
-
-👶 Daughter of *Bharath & Rekha*
-👦 Brothers: *Vicky & Praveen*
-
-📅 *Date:* 8th May 2026 (Friday)
-⏰ *Time:* 4:00 PM onwards
-
-📍 *Venue:* 
-Sri Surya Convention A/C KalyanaMandapam
-Mavayyagari Thota, Tangellamudi, Eluru
-
-Join us to celebrate our little princess turning ONE! 🎀💕
-
-RSVP: 9490514055 / 9490514054`;
-    
-    window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
+// WhatsApp Share
+const shareBtn = document.getElementById("whatsappShareBtn");
+shareBtn.addEventListener("click", () => {
+    const msg = `🎀✨ *Parnika's First Birthday* ✨🎀\n\nJoin us to celebrate our little princess turning ONE! 🎂\n\n📅 10th May 2026 (Sunday) | 4:00 PM\n📍 Sri Surya Convention, Eluru\n\nParents: Bharath & Rekha\nInvited by Father's Brother (Uncle)\n\n📞 RSVP: +91 88855 51903\n\n💖 Your presence is our gift! 💖`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
 });
 
-// ============================================
-// SCROLL REVEAL OBSERVER
-// ============================================
+// Observer for scroll reveals
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add("visible"); });
 }, { threshold: 0.2 });
-
 document.querySelectorAll('.celebration-card, .family-card, .contact-info, .section-head, .venue-details').forEach(el => {
     el.classList.add('reveal');
     observer.observe(el);
 });
-
-// Add reveal to hero card
 document.querySelector('.hero-card')?.classList.add('reveal');
 observer.observe(document.querySelector('.hero-card'));
 
-console.log("🎉 Parnika's Birthday Invitation Ready! 🎉");
-console.log("📸 Replace YOUR_IMAGES array with your photos");
-console.log("🎬 Replace YOUR_VIDEO_URL with your video link");
+console.log("🎉 Parnika's 1st Birthday Invitation Ready! Teddy rain active | No image repeats in scrolls");
 </script>
 </body>
 </html>
